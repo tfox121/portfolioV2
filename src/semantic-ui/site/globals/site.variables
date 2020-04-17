@@ -1,0 +1,11 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@jet              : #363732;
+@honeydew         : #E3F9F2;
+@linen            : #FCEAEA;
+@azureishWhite    : #E3E8ED;
+@oldLace          : #FBF4E8;
+@headerFont       : "Nunito Sans";
+@pageFont         : "Nunito Sans";

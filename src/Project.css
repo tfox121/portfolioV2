@@ -1,0 +1,4 @@
+div.project {
+  min-height: calc(100vh - 2px);
+  padding: 10% 0;
+}
