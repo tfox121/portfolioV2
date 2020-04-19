@@ -9,7 +9,7 @@
 /* Button */
 @verticalMargin: 0em;
 @horizontalMargin: 0.25em;
-@backgroundColor: #E0E1E2;
+@backgroundColor: rgba(255,255,255,0.5);
 @backgroundImage: none;
 @background: @backgroundColor @backgroundImage;
 @lineHeight: 1em;
@@ -23,11 +23,14 @@
 @tapColor: transparent;
 @fontFamily: @pageFont;
 @fontWeight: @bold;
-@textColor: rgba(0, 0, 0, 0.6);
+@textColor: rgba(0, 0, 0, 1);
 @textShadow: none;
 @invertedTextShadow: @textShadow;
 @borderRadius: @defaultBorderRadius;
 @verticalAlign: baseline;
+
+/* Border */
+@border: 2px outset black;
 
 /* Internal Shadow */
 @shadowDistance: 0em;
@@ -35,9 +38,9 @@
 @shadowBoxShadow: 0px -@shadowDistance 0px 0px @borderColor inset;
 
 /* Box Shadow */
-@borderBoxShadowColor: transparent;
-@borderBoxShadowWidth: 1px;
-@borderBoxShadow: 0px 0px 0px @borderBoxShadowWidth @borderBoxShadowColor inset;
+@borderBoxShadowColor: rgba(0,0,0,0.65);
+@borderBoxShadowWidth: -8px;
+@borderBoxShadow: -5px -5px -9px @borderBoxShadowWidth @borderBoxShadowColor inset;
 @boxShadow:
   @borderBoxShadow,
   @shadowBoxShadow
@@ -84,7 +87,7 @@
 --------------------*/
 
 /* Hovered */
-@hoverBackgroundColor: #CACBCD;
+@hoverBackgroundColor: rgba(0, 0, 0, 0.2);
 @hoverBackgroundImage: @backgroundImage;
 @hoverBoxShadow: @boxShadow;
 @hoverColor: @hoveredTextColor;
@@ -187,7 +190,7 @@
 /* Inverted */
 @invertedBorderSize: 2px;
 @invertedTextColor: @white;
-@invertedTextHoverColor: @hoverColor;
+@invertedTextHoverColor: @jet;
 @invertedGroupButtonOffset: 0px 0px 0px -(@invertedBorderSize);
 @invertedVerticalGroupButtonOffset: 0px 0px -(@invertedBorderSize) 0px;
 

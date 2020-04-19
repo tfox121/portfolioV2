@@ -7,5 +7,8 @@
 @linen            : #FCEAEA;
 @azureishWhite    : #E3E8ED;
 @oldLace          : #FBF4E8;
-@headerFont       : "Nunito Sans";
-@pageFont         : "Nunito Sans";
+@headerFont       : "Crete Round";
+@pageFont         : "ABeeZee";
+@defaultBorderRadius: 8px;
+@hoveredTextColor : white;
+@textColor        : @jet;

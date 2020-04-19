@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  Button, Container, Grid, Header, Popup, Image,
+  Button, Container, Grid, Header, Popup, Icon, Image, Modal, Segment,
 } from 'semantic-ui-react';
 
 import './Project.css';
 
-const Project = (props) => {
+const Project = (props, ref) => {
   const { project, color } = props;
   const {
     name,
@@ -14,6 +14,7 @@ const Project = (props) => {
     description,
     image,
     tech,
+    url,
     githubFE,
     githubBE,
   } = project;
@@ -26,47 +27,72 @@ const Project = (props) => {
     if (githubBE) {
       return (
         <Popup
-          trigger={<Button>See it on GitHub</Button>}
+          trigger={(
+            <Button>
+              <div className="button-text">
+                <Icon name="github" />
+                GitHub
+              </div>
+            </Button>
+          )}
           content={(
-            <Grid centered columns={2} verticalAlign="middle" className="github-buttons">
+            <Grid centered columns={1} verticalAlign="middle" className="github-buttons">
               <Grid.Row>
                 <Grid.Column>
                   <Button as="a" href={githubFE} target="_blank">Front End</Button>
-                </Grid.Column>
-                <Grid.Column>
                   <Button as="a" href={githubBE} target="_blank">Back End</Button>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
           )}
           on="click"
+          position="top center"
+          size="large"
           basic
         />
       );
     }
     return (
-      <Button as="a" href={githubFE} target="_blank">See it on GitHub</Button>
+      <Button as="a" href={githubFE} target="_blank">
+        <div className="button-text">
+          <Icon name="github" />
+          GitHub
+        </div>
+      </Button>
     );
   };
 
   return (
-    <div className="project" id={id} style={{ backgroundColor: `${color}` }}>
+    <div className="project section" id={id} ref={ref} style={{ backgroundColor: `${color}` }}>
       <Container text textAlign="center">
         <Header as="h2">{name}</Header>
         <Header as="h3">{date}</Header>
+        <Segment basic>
+          <Modal
+            trigger={<Image src={image} alt="project" rounded bordered basic />}
+          >
+            <Modal.Content image>
+              <Image wrapped src={image} alt="project" size="massive" />
+            </Modal.Content>
+          </Modal>
+          <p>
+            {tech.join(' / ')}
+          </p>
+        </Segment>
         <p className="description">{description}</p>
-        <Grid centered columns={1} className="icons">
-          <Grid.Row>
-            <Grid.Column><Image src={image} alt="project" rounded bordered /></Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column><ul>{tech.map((item) => <li key={item}>{item}</li>)}</ul></Grid.Column>
-          </Grid.Row>
-        </Grid>
-        {buttonOrPopup()}
+
+        <Segment basic>
+          {buttonOrPopup()}
+          <Button>
+            <div className="button-text">
+              <Icon name="rocket" />
+              Launch
+            </div>
+          </Button>
+        </Segment>
       </Container>
     </div>
   );
 };
 
-export default Project;
+export default React.forwardRef(Project);

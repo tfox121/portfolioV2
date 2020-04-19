@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import {
   Icon, Menu, Popup,
 } from 'semantic-ui-react';
 
+import colours from './data/colours';
+import './Header.css';
+
 const Header = (props) => {
-  const { onChange } = props;
+  const [colour, setColour] = useState(colours[0]);
+
+  const { onChange, refs } = props;
 
   const handleItemClick = (e, { name }) => {
     if (name === 'side') {
@@ -12,12 +17,31 @@ const Header = (props) => {
     }
   };
 
+  const colorChange = () => {
+    refs
+      .forEach((ref, index) => {
+        if (ref.current.offsetTop <= window.scrollY
+          && ref.current.offsetTop + ref.current.offsetHeight > window.scrollY
+        ) {
+          setColour(colours[index % colours.length]);
+        }
+      });
+  };
+
+  useLayoutEffect(() => {
+    window.addEventListener('scroll', colorChange);
+    return () => {
+      window.removeEventListener('scroll', colorChange);
+    };
+  });
+
   return (
-    <Menu className="fixed main menu" size="huge" inverted>
+    <Menu className="fixed main" size="huge" style={{ color: `${colour}` }} inverted>
       <Menu.Item
         name="side"
         onClick={handleItemClick}
         content={<Icon name="bars" />}
+
       />
       <Menu.Menu position="right">
         <Popup
@@ -33,9 +57,12 @@ const Header = (props) => {
         <Popup
           trigger={(
             <Menu.Item
+              as="a"
+              href="#contactMe"
               name="mail"
               onClick={handleItemClick}
               content={<Icon name="mail" />}
+
             />
           )}
           content="Send me a message"
@@ -44,7 +71,6 @@ const Header = (props) => {
 
       </Menu.Menu>
     </Menu>
-
   );
 };
 

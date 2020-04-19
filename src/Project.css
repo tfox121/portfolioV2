@@ -1,4 +1,7 @@
-div.project {
-  min-height: calc(100vh - 2px);
-  padding: 10% 0;
+div.button-text {
+  opacity: 1;
+}
+
+li {
+  list-style: none;
 }

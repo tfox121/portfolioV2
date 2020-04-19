@@ -11,7 +11,7 @@
 
 @borderRadius: 0.25em;
 
-@backgroundColor: #EEEEEE;
+@backgroundColor: green;
 @backgroundImage: none;
 @boxShadow: none;
 

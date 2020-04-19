@@ -123,7 +123,7 @@
 @veryWideWidth: 550px;
 
 /* Inverted */
-@invertedBackground: @black;
+@invertedBackground: @jet;
 @invertedColor: @white;
 @invertedBorder: none;
 @invertedBoxShadow: none;
