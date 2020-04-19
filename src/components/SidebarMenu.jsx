@@ -2,8 +2,8 @@ import React, { useState, useLayoutEffect } from 'react';
 import { Header, Menu, Sidebar } from 'semantic-ui-react';
 import { useMediaQuery } from 'react-responsive';
 
-import projects from './data/projects';
-import colours from './data/colours';
+import projects from '../data/projects';
+import colours from '../data/colours';
 import './SidebarMenu.css';
 
 const SidebarMenu = (props) => {

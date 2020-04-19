@@ -3,7 +3,7 @@ import {
   Icon, Menu, Popup,
 } from 'semantic-ui-react';
 
-import colours from './data/colours';
+import colours from '../data/colours';
 import './Header.css';
 
 const Header = (props) => {

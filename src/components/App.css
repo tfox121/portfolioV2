@@ -23,6 +23,10 @@ div.section > .container {
   padding-bottom: 0;
 }
 
+button.ui.button {
+  margin: 0.25em 0.25em;
+}
+
 @media only screen and (min-width: 442px) {
   .content.ui.vertical.segment {
     /* margin: 0px 20% 0px; */

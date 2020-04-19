@@ -1,7 +1,7 @@
 import React from 'react';
 
-import projects from './data/projects';
-import colours from './data/colours';
+import projects from '../data/projects';
+import colours from '../data/colours';
 
 import Project from './Project';
 

@@ -4,8 +4,8 @@ import {
 } from 'semantic-ui-react';
 
 import './ContactMe.css';
-import projects from './data/projects';
-import colours from './data/colours';
+import projects from '../data/projects';
+import colours from '../data/colours';
 
 const ContactMe = (props, ref) => {
   const [name, setName] = useState('');
@@ -53,8 +53,8 @@ const ContactMe = (props, ref) => {
       }}
     >
       <Container text textAlign="center">
+        <Header as="h2">Get in touch!</Header>
         <Segment inverted>
-          <Header as="h2">Get in touch!</Header>
           <Form action="submit" onSubmit={handleSubmit}>
             <Form.Group widths="equal">
               <Form.Input fluid label="Your name" value={name} onChange={(e) => setName(e.target.value)} required />

@@ -1,0 +1,12 @@
+table.ui.attached.table.resources-table {
+  width: 100%;
+}
+
+.resources-table thead i {
+  font-size: 190%;
+}
+
+.resources-table a {
+  color: inherit;
+  display: inline;
+}

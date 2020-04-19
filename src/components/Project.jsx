@@ -39,8 +39,8 @@ const Project = (props, ref) => {
             <Grid centered columns={1} verticalAlign="middle" className="github-buttons">
               <Grid.Row>
                 <Grid.Column>
-                  <Button as="a" href={githubFE} target="_blank">Front End</Button>
-                  <Button as="a" href={githubBE} target="_blank">Back End</Button>
+                  <Button as="a" href={githubFE} target="_blank" rel="noopener noreferrer">Front End</Button>
+                  <Button as="a" href={githubBE} target="_blank" rel="noopener noreferrer">Back End</Button>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
@@ -53,7 +53,7 @@ const Project = (props, ref) => {
       );
     }
     return (
-      <Button as="a" href={githubFE} target="_blank">
+      <Button as="a" href={githubFE} target="_blank" rel="noopener noreferrer">
         <div className="button-text">
           <Icon name="github" />
           GitHub
@@ -69,7 +69,7 @@ const Project = (props, ref) => {
         <Header as="h3">{date}</Header>
         <Segment basic>
           <Modal
-            trigger={<Image src={image} alt="project" rounded bordered basic />}
+            trigger={<Image src={image} alt="project" rounded bordered />}
           >
             <Modal.Content image>
               <Image wrapped src={image} alt="project" size="massive" />
@@ -83,7 +83,7 @@ const Project = (props, ref) => {
 
         <Segment basic>
           {buttonOrPopup()}
-          <Button>
+          <Button as="a" href={url} target="_blank" rel="noopener noreferrer">
             <div className="button-text">
               <Icon name="rocket" />
               Launch

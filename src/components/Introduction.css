@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+.ui.centered.grid.icons .seven.wide.column {
+  padding: 0;
+}
+
 .ui.centered.divided.middle.aligned.two.column.grid.skills-grid > .row > .column .column {
   padding-left: 0;
   padding-right: 0;

@@ -605,7 +605,7 @@ Floated Menu / Item
 }
 .ui.tabular.menu .item {
   background: transparent;
-  border-bottom: none;
+  border-bottom: 1px solid;
 
   border-left: @tabularBorderWidth solid transparent;
   border-right: @tabularBorderWidth solid transparent;
@@ -625,6 +625,7 @@ Floated Menu / Item
 
 /* Active */
 .ui.tabular.menu .active.item {
+  border-bottom: 0;
   background: @tabularActiveBackground;
   color: @tabularActiveColor;
   border-top-width: @tabularBorderWidth;

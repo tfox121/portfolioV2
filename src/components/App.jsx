@@ -3,7 +3,7 @@ import { Segment, Sidebar } from 'semantic-ui-react';
 import { useMediaQuery } from 'react-responsive';
 
 import './App.css';
-import projects from './data/projects';
+import projects from '../data/projects';
 
 import Introduction from './Introduction';
 import Header from './Header';

@@ -44,7 +44,7 @@
 @headerAlign: inherit;
 @headerVerticalAlign: inherit;
 @headerColor: @textColor;
-@headerVerticalPadding: @relativeSmall;
+@headerVerticalPadding: @relativeMini;
 @headerHorizontalPadding: @cellHorizontalPadding;
 @headerFontStyle: none;
 @headerFontWeight: @bold;
@@ -204,7 +204,7 @@
 
 /* Inverted */
 @invertedBackground: #333333;
-@invertedBorder: none;
+@invertedBorder: 1px solid;
 @invertedCellBorderColor: @whiteBorderColor;
 @invertedCellColor: @invertedTextColor;
 
