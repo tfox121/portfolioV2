@@ -80,7 +80,7 @@ const BackEndTable = () => (
   <Table unstackable inverted attached="bottom" celled columns={5} textAlign="center" verticalAlign="middle" className="resources-table">
     <Table.Header>
       <Table.Row>
-        <Table.HeaderCell width="8">Profile/Source</Table.HeaderCell>
+        <Table.HeaderCell width="8" />
         <Table.HeaderCell><IconPopup name="Node.js" classN="devicon-nodejs-plain" /></Table.HeaderCell>
         <Table.HeaderCell><IconPopup name="Express" classN="devicon-express-original" /></Table.HeaderCell>
         <Table.HeaderCell><IconPopup name="MongoDB" classN="devicon-mongodb-plain-wordmark" /></Table.HeaderCell>
