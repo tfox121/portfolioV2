@@ -1,4 +1,6 @@
-import React, { createRef, useEffect, useState } from 'react';
+import React, {
+  createRef, useEffect, useLayoutEffect, useState,
+} from 'react';
 import { Segment, Sidebar } from 'semantic-ui-react';
 import { useMediaQuery } from 'react-responsive';
 
@@ -13,6 +15,7 @@ import ContactMe from './ContactMe';
 
 const App = () => {
   const [visible, setVisible] = useState(false);
+  const [elRefs, setElRefs] = useState([]);
 
   const isLaptopOrBigger = useMediaQuery({ query: '(min-width: 1224px)' });
 
@@ -23,7 +26,6 @@ const App = () => {
   }, [isLaptopOrBigger]);
 
   const arrLength = projects.length + 2;
-  const [elRefs, setElRefs] = React.useState([]);
 
   React.useEffect(() => {
     // add or remove refs
@@ -31,6 +33,22 @@ const App = () => {
       Array(arrLength).fill().map((_, i) => refs[i] || createRef())
     ));
   }, [arrLength]);
+
+  useLayoutEffect(() => {
+    if (elRefs) {
+      setTimeout(() => {
+        const newHeights = [];
+        elRefs.slice(1, -1).forEach((ref) => {
+          const node = ref.current.querySelector('.ui.content .image-text');
+          const image = ref.current.querySelector('.ui.content .image');
+          if (image) {
+            newHeights.push([{ name: ref.current.id, height: image.height }]);
+            node.style.height = `${image.height}px`;
+          }
+        });
+      }, 0);
+    }
+  }, [elRefs]);
 
 
   const handleChange = () => {

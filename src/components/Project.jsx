@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  Button, Container, Grid, Header, Popup, Icon, Image, Modal, Segment,
+  Button, Container, Grid, Header, Popup, Icon, Image, Modal, Reveal, Segment,
 } from 'semantic-ui-react';
 
 import './Project.css';
@@ -62,6 +62,38 @@ const Project = (props, ref) => {
     );
   };
 
+  // const MouseEnterHandler = () => {
+  //   if (ref) {
+  //     const nodeId = ref.current.id;
+  //     console.log('blur', nodeId);
+  //     setBlur(nodeId);
+  //   }
+  // };
+
+  const MouseEnterHandler = () => {
+    if (ref) {
+      const imageNode = ref.current.querySelector('.ui.content > .image');
+      const node = ref.current.querySelector('.ui.reveal > div.ui.content.text');
+      if (imageNode) {
+        imageNode.style.filter = 'blur(2px)';
+        node.style.opacity = '1';
+        node.style.visibility = 'visible';
+      }
+    }
+  };
+
+  const MouseLeaveHandler = () => {
+    if (ref) {
+      const imageNode = ref.current.querySelector('.ui.content > .image');
+      const node = ref.current.querySelector('.ui.reveal > div.ui.content.text');
+      if (imageNode) {
+        imageNode.style.filter = 'blur(0)';
+        node.style.opacity = '0';
+        node.style.visibility = 'hidden';
+      }
+    }
+  };
+
   return (
     <div className="project section" id={id} ref={ref} style={{ backgroundColor: `${color}` }}>
       <Container text textAlign="center">
@@ -69,15 +101,25 @@ const Project = (props, ref) => {
         <Header as="h3">{date}</Header>
         <Segment basic>
           <Modal
-            trigger={<Image src={image} alt="project" rounded bordered />}
+            trigger={(
+              <Reveal animated="fade" onMouseEnter={MouseEnterHandler} onMouseLeave={MouseLeaveHandler}>
+                <Reveal.Content className="text">
+                  <Segment className="image-text"><Header>{tech.join(' / ')}</Header></Segment>
+                </Reveal.Content>
+                <Reveal.Content>
+                  <Image src={image} alt="project" rounded bordered />
+                </Reveal.Content>
+
+              </Reveal>
+            )}
           >
             <Modal.Content image>
               <Image wrapped src={image} alt="project" size="massive" />
             </Modal.Content>
           </Modal>
-          <p>
+          {/* <p>
             {tech.join(' / ')}
-          </p>
+          </p> */}
         </Segment>
         <p className="description">{description}</p>
 

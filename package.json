@@ -1,4 +1,5 @@
 {
+  "homepage": "http://tfox121.github.io/portfolioV2",
   "name": "tf-portfolio-v2",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +20,9 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
-    "lint-all": "npx eslint --fix \"{,!(node_modules)/**/}*.{js,jsx}\""
+    "lint-all": "npx eslint --fix \"{,!(node_modules)/**/}*.{js,jsx}\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,6 +51,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
+    "gh-pages": "^2.2.0",
     "react-test-renderer": "^16.13.1"
   }
 }
