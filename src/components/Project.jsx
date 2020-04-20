@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Button, Container, Grid, Header, Popup, Icon, Image, Modal, Reveal, Segment,
 } from 'semantic-ui-react';
@@ -62,14 +62,6 @@ const Project = (props, ref) => {
     );
   };
 
-  // const MouseEnterHandler = () => {
-  //   if (ref) {
-  //     const nodeId = ref.current.id;
-  //     console.log('blur', nodeId);
-  //     setBlur(nodeId);
-  //   }
-  // };
-
   const MouseEnterHandler = () => {
     if (ref) {
       const imageNode = ref.current.querySelector('.ui.content > .image');
@@ -109,7 +101,6 @@ const Project = (props, ref) => {
                 <Reveal.Content>
                   <Image src={image} alt="project" rounded bordered />
                 </Reveal.Content>
-
               </Reveal>
             )}
           >
@@ -117,9 +108,6 @@ const Project = (props, ref) => {
               <Image wrapped src={image} alt="project" size="massive" />
             </Modal.Content>
           </Modal>
-          {/* <p>
-            {tech.join(' / ')}
-          </p> */}
         </Segment>
         <p className="description">{description}</p>
 
