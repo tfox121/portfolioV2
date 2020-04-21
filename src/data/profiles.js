@@ -1,11 +1,5 @@
 export default [
   {
-    name: 'SoloLearn',
-    key: 'sololearn',
-    url: 'https://www.sololearn.com/Profile/14233885',
-    frontEndTicks: [true, false, true, false],
-  },
-  {
     name: 'freeCodeCamp',
     key: 'fcc',
     url: 'https://www.freecodecamp.org/tfox121',

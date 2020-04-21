@@ -26,7 +26,7 @@ export default [
     name: 'Contact Form Lambda',
     id: 'contactForm',
     date: '16/11/19',
-    description: 'My original portfolio\'s contact form handler, which I\'m re-using on here! I built a small back-end using AWS API Gateway connected to an AWS Lambda function using Serverless to handle my contact form.',
+    description: 'My original portfolio\'s contact form handler, which I\'m re-using on here! I built a small back-end using AWS API Gateway connected to an AWS Lambda function using the Serverless framework to handle my contact form.',
     image: 'images/nodeLambda.png',
     tech: ['Node', 'AWS', 'Serverless'],
     url: '',
