@@ -71,7 +71,6 @@ const FrontEndTable = () => (
       {TableRow(0, 'frontEndTicks')}
       {TableRow(1, 'frontEndTicks')}
       {TableRow(2, 'frontEndTicks')}
-      {TableRow(3, 'frontEndTicks')}
     </Table.Body>
   </Table>
 );
@@ -88,9 +87,9 @@ const BackEndTable = () => (
       </Table.Row>
     </Table.Header>
     <Table.Body>
+      {TableRow(0, 'backEndTicks')}
       {TableRow(1, 'backEndTicks')}
       {TableRow(2, 'backEndTicks')}
-      {TableRow(3, 'backEndTicks')}
     </Table.Body>
   </Table>
 );
