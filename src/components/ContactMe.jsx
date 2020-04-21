@@ -60,7 +60,7 @@ const ContactMe = (props, ref) => {
               <Form.Input fluid label="Your name" value={name} onChange={(e) => setName(e.target.value)} required />
               <Form.Input fluid label="Your email address" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
             </Form.Group>
-            <Form.TextArea label="Your message" value={message} onChange={(e) => setMessage(e.target.value)} />
+            <Form.TextArea rows="5" label="Your message" value={message} onChange={(e) => setMessage(e.target.value)} />
             <p>{result}</p>
             <Form.Button type="submit" disabled={success} inverted>Submit</Form.Button>
           </Form>
