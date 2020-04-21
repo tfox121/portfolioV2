@@ -23,15 +23,14 @@ export default [
 
   },
   {
-    name: 'Portfolio V1',
-    id: 'portfolioV1',
+    name: 'Contact Form Lambda',
+    id: 'contactForm',
     date: '16/11/19',
     description: 'My original portfolio built with Bootstrap along with some custom CSS and JS. I built a small back-end using AWS API Gateway connected to an AWS lambda function using Serverless to handle my contact form.',
-    image: 'images/portfolioV1.png',
-    tech: ['Bootstrap', 'Node', 'AWS', 'Serverless'],
-    url: 'https://tfox121.github.io/',
-    githubFE: 'https://github.com/tfox121/tfox121.github.io',
-    githubBE: 'https://github.com/tfox121/contactFormLambda',
+    image: 'images/nodeLambda.png',
+    tech: ['Node', 'AWS', 'Serverless'],
+    url: '',
+    githubFE: 'https://github.com/tfox121/contactFormLambda',
   },
   {
     name: 'Choropleth Map',

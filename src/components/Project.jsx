@@ -62,6 +62,20 @@ const Project = (props, ref) => {
     );
   };
 
+  const launchButton = () => {
+    if (url) {
+      return (
+        <Button as="a" href={url} target="_blank" rel="noopener noreferrer">
+          <div className="button-text">
+            <Icon name="rocket" />
+            Launch
+          </div>
+        </Button>
+      );
+    }
+    return null;
+  };
+
   const MouseEnterHandler = () => {
     if (ref) {
       const imageNode = ref.current.querySelector('.ui.content > .image');
@@ -113,12 +127,7 @@ const Project = (props, ref) => {
 
         <Segment basic>
           {buttonOrPopup()}
-          <Button as="a" href={url} target="_blank" rel="noopener noreferrer">
-            <div className="button-text">
-              <Icon name="rocket" />
-              Launch
-            </div>
-          </Button>
+          {launchButton()}
         </Segment>
       </Container>
     </div>
