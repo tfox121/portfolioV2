@@ -1,10 +1,10 @@
 export default [
-    {
+  {
     name: 'Music Rediscovery',
     id: 'recordShelfRediscovery',
     date: '27/04/20',
     description: 'A simple project on the surface, for this React project I gained experience leveraging multiple existing APIs to create an app that is more than the sum of its parts. This has been an invaluable lesson in adapting my approaches to the shape of 3rd party incoming data.',
-    image: 'images/subredditGame.png',
+    image: 'images/recordShelfRediscovery.png',
     tech: ['React', 'Spotify API', 'Spotify', 'Web Playback SDK', 'Last.fm API', 'Semantic UI'],
     url: 'https://recordshelfrediscovery.herokuapp.com/',
     githubFE: 'https://github.com/tfox121/digitalRecordShelf',
