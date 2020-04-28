@@ -1,5 +1,5 @@
 import React, {
-  createRef, useEffect, useLayoutEffect, useState,
+  createRef, useEffect, useState,
 } from 'react';
 import { Segment, Sidebar } from 'semantic-ui-react';
 import { useMediaQuery } from 'react-responsive';
@@ -33,23 +33,6 @@ const App = () => {
       Array(arrLength).fill().map((_, i) => refs[i] || createRef())
     ));
   }, [arrLength]);
-
-  useLayoutEffect(() => {
-    if (elRefs) {
-      setTimeout(() => {
-        const newHeights = [];
-        elRefs.slice(1, -1).forEach((ref) => {
-          const node = ref.current.querySelector('.ui.content .image-text');
-          const image = ref.current.querySelector('.ui.content .image');
-          if (image) {
-            newHeights.push([{ name: ref.current.id, height: image.height }]);
-            node.style.height = `${image.height}px`;
-          }
-        });
-      }, 0);
-    }
-  }, [elRefs]);
-
 
   const handleChange = () => {
     setVisible(!visible);

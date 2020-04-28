@@ -39,7 +39,7 @@
 
 /* Content */
 @contentFontSize: 1em;
-@contentPadding: 1.5rem;
+@contentPadding: 1rem;
 @contentLineHeight: 1.4;
 @contentBackground: #FFFFFF;
 
